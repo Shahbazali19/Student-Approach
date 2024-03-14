@@ -160,7 +160,9 @@ input:valid + span:after {
     font-size: 1.6rem;
     line-height: 54px;
 }
-
+#father_phone{
+  width: calc(100% - 0.5rem);
+}
 #phone {
   width: calc(100% - 0.5rem);
   padding: 1rem;
