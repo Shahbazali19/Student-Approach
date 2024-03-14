@@ -17,6 +17,24 @@
           <label>Full Name</label>
           <input type="text" placeholder="Enter full name" name="name" required />
         </div>  
+
+<div class="column">
+          <div class="input-box">
+            <label>Father's Name</label>
+            <input type="text" placeholder="Enter father's name" name="father_name" required />
+          </div>
+          <div class="input-box">
+            <label>Father's Phone Number</label>
+<input 
+        id="phone" 
+        type="text" 
+        required 
+        pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"
+        placeholder="0336-805-3200"  name="father_mobile" />
+      <span class="validity"></span>
+          </div>
+        </div> 
+
   
         <div class="column"> 
  <div class="input-box">
@@ -35,22 +53,7 @@
 <!--       <small class="small-text">Format: +92-3XZ-YYYYYYY</small> -->
           </div>
         </div> 
-<div class="column">
-          <div class="input-box">
-            <label>Father's Name</label>
-            <input type="text" placeholder="Enter father's name" name="father_name" required />
-          </div>
-          <div class="input-box">
-            <label>Father's Phone Number</label>
-<input 
-        id="phone" 
-        type="text" 
-        required 
-        pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"
-        placeholder="0336-805-3200"  name="father_mobile" />
-      <span class="validity"></span>
-          </div>
-        </div> 
+
         <div class="gender-box">
           <h3>Gender</h3>
           <div class="gender-option">
