@@ -12,7 +12,7 @@
     <section class="container">
 <img src="studentapproachlogo.jpeg" alt="Your Logo" class="logo">
       <header>Registration Form</header>
-      <form action="#" class="form" method="post" name="google-sheet">
+<form action="/.netlify/functions/submitForm" class="form" method="post" name="google-sheet">
         <div class="input-box">
           <label>Full Name</label>
           <input type="text" placeholder="Enter full name" name="name" required />
@@ -109,6 +109,25 @@
 window.onload = function() {
   document.getElementById("phone").focus();
 }
+exports.handler = async (event) => {
+  try {
+    const { name, father_name, father_mobile, email, mobile, gender, school, class, street, city } = JSON.parse(event.body);
+
+    // Your code to interact with Google Sheets API to submit the form data goes here
+    // Example:
+    // const response = await submitToGoogleSheets(name, father_name, father_mobile, email, mobile, gender, school, class, street, city);
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: 'Form submitted successfully' }),
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Internal server error' }),
+    };
+  }
+};
     </script>
   </body>
 </html>
