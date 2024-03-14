@@ -145,7 +145,7 @@ body {
 }
 input:invalid + span:after {
   position: absolute;
-  content: "✖";
+/*   content: "✖"; */
    padding-left: 0.7rem;
   color: #d9534f;
      font-size: 1.6rem;
