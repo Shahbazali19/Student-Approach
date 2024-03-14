@@ -42,7 +42,13 @@
           </div>
           <div class="input-box">
             <label>Phone Number</label>
-            <input type="text" placeholder="Father Contact Number" name="father_mobile"  required />
+<input 
+        id="phone" 
+        type="text" 
+        required 
+        pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"
+        placeholder="0336-805-3200"  name="father_mobile" />
+      <span class="validity"></span>
           </div>
         </div> 
         </div>
