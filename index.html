@@ -95,39 +95,22 @@
       </form>
     </section>
     <script>
-      const scriptURL = 'https://script.google.com/macros/library/d/1KQ4Mz_GqlyEzjWzBBLk_IhTVcAjbQPUZePYdUt4agw4mDTVAUFEb6Lgm/2'
-      const form = document.forms['google-sheet']
-    
-       form.addEventListener('submit', e => {
+     const scriptURL = 'https://script.google.com/macros/s/AKfycbws6tlVxJowRo3FCYhoAhxeH50MJRS43zCs0U1RMi3RiaF4tXPjr0EJgtOO3lqTui8m/exec';
+const form = document.forms['google-sheet'];
+
+form.addEventListener('submit', e => {
     e.preventDefault();
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {
-        window.location.href = "thankyou.html"; // Redirect to Thank You page
-      })
-      .catch(error => console.error('Error!', error.message));
-})
-window.onload = function() {
-  document.getElementById("phone").focus();
-}
-exports.handler = async (event) => {
-  try {
-    const { name, father_name, father_mobile, email, mobile, gender, school, class, street, city } = JSON.parse(event.body);
+        .then(response => {
+            if (response.ok) {
+                window.location.href = "thankyou.html"; // Redirect to Thank You page
+            } else {
+                console.error('Error!', response.statusText);
+            }
+        })
+        .catch(error => console.error('Error!', error.message));
+});
 
-    // Your code to interact with Google Sheets API to submit the form data goes here
-    // Example:
-    // const response = await submitToGoogleSheets(name, father_name, father_mobile, email, mobile, gender, school, class, street, city);
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: 'Form submitted successfully' }),
-    };
-  } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'Internal server error' }),
-    };
-  }
-};
     </script>
   </body>
 </html>
