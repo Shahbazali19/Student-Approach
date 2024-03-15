@@ -191,3 +191,10 @@ color: #707070;
 #phone:focus:invalid {
   border-color: rgb(217 83 79 / 60%);
 }
+
+footer {
+    text-align: center;
+    margin-top: 20px; /* Adjust margin as needed */
+    color: #707070;
+    font-size: 14px;
+}
